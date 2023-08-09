@@ -25,3 +25,23 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+---------------------------------------------------
+
+Pasos para instalacion local
+
+Instalar NVM
+
+Con NVM instalar node 16.13.2
+  nvm install 16.13.2
+  nvm use 16.13.2
+
+Instalar Angular CLI 15.2 de manera global
+  npm install -g @angular/cli@15.2
+
+En el proyecto correr el comando
+  npm install
+
+Posteriormente ejecutar
+  ng serve

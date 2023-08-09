@@ -1,0 +1,177 @@
+<div class="container-fluid bg-dark py-4">
+    <nav id="products">
+
+        <div class="nav nav-tabs justify-content-center"
+            id="nav-tab"
+            role="tablist">
+            <button class="nav-link active text-white"
+                id="nav-password-generator-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-password-generator"
+                type="button"
+                role="tab"
+                aria-controls="nav-password-generator"
+                aria-selected="true">Generador de Contraseñas</button>
+            <button class="nav-link text-white"
+                id="nav-OTP-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-OTP"
+                type="button"
+                role="tab"
+                aria-controls="nav-OTP"
+                aria-selected="false">Autenticación por OTP</button>
+            <button class="nav-link text-white"
+                id="nav-magin-link-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-magin-link"
+                type="button"
+                role="tab"
+                aria-controls="nav-magin-link"
+                aria-selected="false">Magic Link</button>
+        </div>
+    </nav>
+
+    <div class="tab-content"
+        id="nav-tabContent">
+
+        <div class="tab-pane fade show active"
+            id="nav-password-generator"
+            role="tabpanel"
+            aria-labelledby="nav-password-generator-tab"
+            tabindex="0">
+
+            <div class=" bg-light m-4 py-4">
+
+                <div class="row d-flex justify-content-around">
+
+                    <div class="col-7 bg-body-tertiary p-4">
+                        <h2>Generación de Contraseñas</h2>
+                        <p class="py-3 mt-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus posuere dolor est, eget
+                            interdum ex finibus nec. Praesent ut lacus felis. Nullam auctor libero a facilisis pulvinar.
+                            Fusce et felis vitae metus ultricies rutrum et nec sem. Vestibulum aliquet molestie enim non
+                            fringilla. Aliquam placerat commodo ligula, sit amet posuere augue condimentum quis. Donec
+                            erat diam, pellentesque in urna sed, pretium varius arcu. Morbi non maximus sapien, in
+                            elementum elit. Nulla nec egestas enim. Aliquam erat volutpat. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit.
+                        </p>
+                    </div>
+
+                    <div class="col-4 bg-body-tertiary py-4">
+                        <form class="form-horizontal border-form">
+                            <h3 class="text-center justify-content-center mb-5">Registro o Ingreso al App</h3>
+
+                            <div class="input-group flex-nowrap w-75 mx-auto">
+                                <span class="input-group-text text-white bg-dark"
+                                    id="addon-wrapping">@</span>
+                                <input type="text"
+                                    class="form-control w-75"
+                                    placeholder="Password"
+                                    aria-label="Username"
+                                    aria-describedby="addon-wrapping">
+                            </div>
+
+                            <div class="input-group flex-nowrap my-3 justify-content-center">
+                                <button class="btn bg-site-primary text-white w-75">Generar Contraseña</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade"
+            id="nav-OTP"
+            role="tabpanel"
+            aria-labelledby="nav-OTP-tab"
+            tabindex="0">
+
+            <div class=" bg-light m-4 py-4">
+
+                <div class="row d-flex justify-content-around">
+
+                    <div class="col-7 bg-body-tertiary p-4">
+                        <h2>Generación y Validación de OTP</h2>
+                        <p class="py-3 mt-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus posuere dolor est, eget
+                            interdum ex finibus nec. Praesent ut lacus felis. Nullam auctor libero a facilisis pulvinar.
+                            Fusce et felis vitae metus ultricies rutrum et nec sem. Vestibulum aliquet molestie enim non
+                            fringilla. Aliquam placerat commodo ligula, sit amet posuere augue condimentum quis. Donec
+                            erat diam, pellentesque in urna sed, pretium varius arcu. Morbi non maximus sapien, in
+                            elementum elit. Nulla nec egestas enim. Aliquam erat volutpat. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit.
+                        </p>
+                    </div>
+
+                    <div class="col-4 bg-body-tertiary py-4">
+                        <form class="form-horizontal border-form"
+                            (ngSubmit)="generateOTP()">
+                            <h3 class="text-center justify-content-center mb-5">Registro o Ingreso al App</h3>
+
+                            <div class="input-group flex-nowrap w-75 mx-auto mb-2">
+                                <span class="input-group-text text-white bg-dark"
+                                    id="addon-wrapping">@</span>
+                                <input type="text"
+                                    class="form-control w-75"
+                                    placeholder="Username"
+                                    aria-label="Username"
+                                    aria-describedby="addon-wrapping">
+                            </div>
+
+                            <div class="input-group flex-nowrap w-75 mx-auto mb-2">
+                                <span class="input-group-text text-white bg-dark"
+                                    id="addon-wrapping">@</span>
+                                <input type="text"
+                                    class="form-control w-75"
+                                    placeholder="Password"
+                                    aria-label="Password"
+                                    aria-describedby="addon-wrapping">
+                            </div>
+
+                            <div class="input-group flex-nowrap my-3 justify-content-center">
+                                <button class="btn bg-site-primary text-white w-75"
+                                    type="submit">Generar OTP</button>
+                            </div>
+
+                            <div *ngIf="showOtpInput">
+
+                                <div class="input-group flex-nowrap w-75 mx-auto mb-2">
+                                    <input type="text"
+                                        [ngModel]="otpCode"
+                                        [value]="otpCode"
+                                        class="form-control w-75 fs-3 text-center otpCode"
+                                        placeholder="OTP"
+                                        aria-label="OTP"
+                                        aria-describedby="addon-wrapping">
+                                </div>
+
+                                <div class="input-group flex-nowrap my-3 justify-content-center">
+                                    <button class="btn bg-site-primary text-white w-75"
+                                        (click)="validateOTP()">Validar OTP</button>
+                                </div>
+
+                                <div class="alert alert-success"
+                                    role="alert"
+                                    *ngIf='otpMessage != ""'>
+                                    {{otpMessage}}
+
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade"
+            id="nav-magin-link"
+            role="tabpanel"
+            aria-labelledby="nav-magin-link-tab"
+            tabindex="0">...</div>
+
+    </div>
+
+</div>

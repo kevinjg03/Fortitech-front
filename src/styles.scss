@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/css/variables";
+
+.separator {
+    height: 20px;
+    background-color: white !important;
+}
+
+.bg-site-primary {
+    background-color: $color-primary !important;
+}
+
+.bg-dark {
+    background-color: radial-gradient(circle, rgba(115,115,115,0.75) 0%, rgba(13,13,13,1) 92%), $color-dark !important;
+}
+
+.bg-light {
+    background-color: $color-light !important;
+}
+
+.bg-site-tertiary {
+    background-color: $color-tertiary !important;
+}
+
+.bg-section1 {
+    background-image: radial-gradient(circle, rgba(115,115,115,0.75) 0%, rgba(13,13,13,1) 92%), url(assets/img/lock.webp);
+}
+
+.bg-section2 {
+    background-image: radial-gradient(circle, rgba(115,115,115,0.75) 0%, rgba(13,13,13,1) 92%), url(assets/img/section2-bg.jpg);
+}
+
+#products {
+    .nav-link.active {
+        background-color: $color-primary !important;
+        color: white
+    } 
+} 
+
+.border-form {
+    border: 1px solid  $color-dark !important;
+    border-radius: 25px;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.otpCode {
+    letter-spacing: 7px;
+}
